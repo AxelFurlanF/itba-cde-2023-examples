@@ -19,3 +19,9 @@ update:
 
 run:
 	poetry run python -m ${PROJECT_NAME}
+
+add:
+	poetry add ${PACKAGE_NAME}
+
+install:
+	poetry install
