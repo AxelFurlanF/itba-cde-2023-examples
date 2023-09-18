@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "itba-testing-module"
+version = "0.1.0"
+description = ""
+authors = ["Axel Furlan <axel.furlan@toptal.com>"]
+readme = "README.md"
+packages = [{include = "itba_testing_module"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "v2.0.0"
+pytest = "^7.4.2"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
