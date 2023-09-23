@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["Axel Furlan <axel.furlan@toptal.com>"]
 readme = "README.md"
-packages = [{include = "itba_testing_module"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
