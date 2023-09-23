@@ -1,0 +1,30 @@
+name: Python application test with pytest
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs_on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Install dependencies with poetry
+      run: |
+        cd testing
+        poetry install
+
+    - name: Run pytest
+      run: |
+        cd testing
+        poetry run pytest tests
