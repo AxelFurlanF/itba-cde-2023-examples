@@ -1,5 +1,4 @@
 import datetime as dt
-import pprint
 from airflow import DAG
 from airflow.models import Variable
 from airflow.operators.python_operator import PythonOperator
