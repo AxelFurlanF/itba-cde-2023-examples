@@ -3,8 +3,8 @@ name: Flake8 Lint
 on: [push, pull_request]
 
 jobs:
-  build:
-
+  run-linter:
+    name: Run Flake8
     runs-on: ubuntu-latest
 
     steps:
