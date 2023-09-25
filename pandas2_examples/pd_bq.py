@@ -18,9 +18,8 @@ def read_chicago_taxi_data_with_df():
 
 
 def read_chicago_taxi_data_with_sql():
-    # Instantiate a BigQuery client
     client = bigquery.Client()
-    query = f'SELECT * FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips` LIMIT 10'
+    query = 'SELECT * FROM `bigquery-public-data.chicago_taxi_trips.taxi_trips` LIMIT 10'
 
     df = client.query(query).to_dataframe()
     return df

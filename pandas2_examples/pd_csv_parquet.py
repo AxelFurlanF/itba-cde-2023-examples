@@ -53,13 +53,13 @@ def compare_file_efficiency(csv_path, parquet_path):
 if __name__ == "__main__":
     print('------------SMALL FILE------------')
     df = read_titanic_csv()
-    df.to_csv('titanic.csv')
+    df.to_csv('titanic.csv', index=False)
     to_parquet(df, 'titanic.parquet')
     compare_file_efficiency('titanic.csv', 'titanic.parquet')
 
     df = multiply_dataset(df)
 
     print('------------BIG FILE------------')
-    df.to_csv('big_titanic.csv')
+    df.to_csv('big_titanic.csv', index=False)
     to_parquet(df, 'big_titanic.parquet')
     compare_file_efficiency('big_titanic.csv', 'big_titanic.parquet')

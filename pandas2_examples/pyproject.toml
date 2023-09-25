@@ -7,14 +7,15 @@ readme = "README.md"
 packages = []
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.6"
 pandas = "v2.0.0"
 google-cloud-bigquery = "^3.11.4"
 pyarrow = "^13.0.0"
-sqlalchemy = "^2.0.21"
+sqlalchemy = "1.4.49"
 psycopg2-binary = "^2.9.7"
 requests = "^2.31.0"
 db-dtypes = "^1.1.1"
+sqlalchemy-bigquery = "^1.8.0"
 
 
 [build-system]
