@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pandas2-examples"
+version = "0.1.0"
+description = ""
+authors = ["Axel Furlan <axel.furlan@toptal.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "v2.0.0"
+google-cloud-bigquery = "^3.11.4"
+pyarrow = "^13.0.0"
+sqlalchemy = "^2.0.21"
+psycopg2-binary = "^2.9.7"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

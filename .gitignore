@@ -162,3 +162,12 @@ cython_debug/
 
 # docker
 composer/
+
+#ignore json file
+*.json
+
+#ignore parquet file
+*.parquet
+
+#ignore csv file
+*.csv
