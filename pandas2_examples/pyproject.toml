@@ -17,6 +17,7 @@ requests = "^2.31.0"
 db-dtypes = "^1.1.1"
 sqlalchemy-bigquery = "^1.8.0"
 pandas-gbq = "^0.19.2"
+gcsfs = "^2023.9.2"
 
 
 [build-system]

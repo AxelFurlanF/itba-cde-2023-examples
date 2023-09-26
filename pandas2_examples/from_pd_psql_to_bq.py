@@ -1,5 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import common_env as ce
 
 # create postgres engine
 engine = create_engine('postgresql://:@localhost:5432/itba-dev')
@@ -16,4 +17,4 @@ df = pd.read_sql(sql, engine)
 # df.to_sql('titanic_2', engine, index=False, if_exists='replace')
 
 # this is faster:
-df.to_gbq('itba_dev.titanic_2', project_id='itoa-dev-2', if_exists='replace')
+df.to_gbq(f'{ce.DATASET_ID}.titanic_2', project_id='itoa-dev-2', if_exists='replace')

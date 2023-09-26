@@ -1,6 +1,7 @@
 import pandas as pd
 import psycopg2
 from google.cloud import bigquery
+import common_env as ce
 
 # Create a connection to the PostgreSQL database
 conn = psycopg2.connect(
@@ -32,12 +33,8 @@ conn.close()
 # Create a BigQuery client
 client = bigquery.Client()
 
-# Define BigQuery dataset and table
-dataset_id = 'itba_dev'
-table_id = 'titanic'
-
 # Get table reference
-table_ref = client.dataset(dataset_id).table(table_id)
+table_ref = client.dataset(ce.DATASET_ID).table('titanic')
 
 # Define job config
 job_config = bigquery.LoadJobConfig()
