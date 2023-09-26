@@ -16,6 +16,10 @@ def from_df_to_db(df, table_name):
 
 
 if __name__ == "__main__":
+    # read csv
     df = pd.read_csv('titanic.csv')
+    # post to postgres
     from_df_to_db(df, 'titanic')
+
+    # read back from postgres using query
     df = from_query_to_df("SELECT * FROM titanic")

@@ -9,12 +9,10 @@ sql = "SELECT * FROM titanic"
 df = pd.read_sql(sql, engine)
 
 
-# Write the DataFrame to a BigQuery table
-# this is very slow:
+# IMPOTANT: this is very slow because it does INSERT row by row
 # Create the BigQuery engine
-# engine = create_engine(
-#     'bigquery://itoa-dev-2/itba_dev'
-# )
+# engine = create_engine('bigquery://itoa-dev-2/itba_dev')
+# Write the DataFrame to a BigQuery table
 # df.to_sql('titanic_2', engine, index=False, if_exists='replace')
 
 # this is faster:

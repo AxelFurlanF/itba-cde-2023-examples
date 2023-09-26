@@ -171,3 +171,6 @@ composer/
 
 #ignore csv file
 *.csv
+
+# ignore dbs
+*.db
