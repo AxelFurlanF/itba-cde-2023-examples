@@ -9,7 +9,7 @@ def read_titanic_csv():
 
 
 def to_parquet(df, name):
-    df.to_parquet(name)
+    df.to_parquet(name, compression='gzip')
 
 
 def multiply_dataset(df, n=1000):

@@ -33,7 +33,7 @@ with DAG(
         task_id='check_gcs_file_sensor',
         bucket='your-gcs-bucket',
         object='your-gcs-object',
-        google_cloud_storage_conn_id='google_cloud_default'
+        google_cloud_conn_id='google_cloud_default'
     )
 
     proceed_after_gcs_object = DummyOperator(

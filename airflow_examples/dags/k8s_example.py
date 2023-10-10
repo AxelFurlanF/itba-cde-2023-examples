@@ -24,9 +24,9 @@ dag = DAG(
 
 # Define the KubernetesPodOperator task
 run_pod = KubernetesPodOperator(
-    task_id='<TASK_ID>',
+    task_id='run_pod',
     name='run-pod',
-    namespace='<NAMESPACE>',
+    namespace='kube_space',
     image='ubuntu:16.04',
     cmds=["bash", "-cx"],
     arguments=["echo", "10", "do_stuff"],

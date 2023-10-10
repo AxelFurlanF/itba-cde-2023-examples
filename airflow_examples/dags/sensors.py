@@ -34,7 +34,7 @@ with DAG(
         method='GET',
         response_check=lambda response: response.status_code == 200,
         poke_interval=5,
-        timeout=20,
+        timeout=20
     )
 
     proceed_after_api = DummyOperator(
