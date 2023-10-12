@@ -174,3 +174,7 @@ composer/
 
 # ignore dbs
 *.db
+
+*.DS_Store
+
+airflow_examples/logs/*
