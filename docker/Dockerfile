@@ -11,6 +11,8 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 80 available to the world outside this container
+# DOCUMENTACION
+# HTTP uses port 80 by default. HTTPS uses port 443 by default.
 EXPOSE 80
 
 # Run app.py when the container launches
