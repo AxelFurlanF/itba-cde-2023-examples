@@ -10,7 +10,7 @@ import pandas as pd
 # Define constants
 REDSHIFT_CONN_STRING = f"redshift+psycopg2://pdateacher:{os.environ['REDSHIFT_PASSWORD']}@redshift-pda-cluster.cnuimntownzt.us-east-2.redshift.amazonaws.com:5439/pda"
 DATA_PATH = os.path.dirname(os.path.realpath(__file__))
-REDSHIFT_TABLE = 'example.example_table'
+REDSHIFT_TABLE = 'example_table'
 
 # Define functions
 
@@ -41,7 +41,7 @@ def load_to_redshift(**kwargs):
     redshift_conn_string = kwargs['redshift_conn_string']
     df = pd.read_parquet(transformed_parquet)
     engine = create_engine(redshift_conn_string)
-    df.to_sql(redshift_table, engine, if_exists='replace', index=False, method='multi')
+    df.to_sql(redshift_table, engine, if_exists='replace', index=False, method='multi', schema='airflow')
 
 
 # Define DAG
