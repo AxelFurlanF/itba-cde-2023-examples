@@ -54,9 +54,3 @@ def main(data_path: str, redshift_table: str, redshift_conn_string: str):
     output_path = extract_data(data_path)
     transformed_data_path = transform_data(output_path, data_path)
     load_to_redshift(transformed_data_path, redshift_table, redshift_conn_string)
-
-
-if __name__ == "__main__":
-    # current path
-    data_path = os.path.dirname(os.path.realpath(__file__))
-    main(data_path=data_path, redshift_table='example.example_table', redshift_conn_string=REDSHIFT_CONN_STRING)
