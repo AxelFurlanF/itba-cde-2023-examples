@@ -1,11 +1,12 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
-from datetime import datetime
 import os
+from datetime import datetime
 
-from sqlalchemy import create_engine
-import requests
 import pandas as pd
+import requests
+from airflow import DAG
+from airflow.exceptions import AirflowSkipException
+from airflow.operators.python import PythonOperator
+from sqlalchemy import create_engine
 
 # Define constants
 REDSHIFT_CONN_STRING = f"redshift+psycopg2://pdateacher:{os.environ['REDSHIFT_PASSWORD']}@redshift-pda-cluster.cnuimntownzt.us-east-2.redshift.amazonaws.com:5439/pda"
@@ -22,10 +23,13 @@ def extract_data(**kwargs):
     df = pd.DataFrame(data)
     path = os.path.join(output_parquet, 'data.parquet')
     df.to_parquet(path)
+    if df.empty:
+        raise AirflowSkipException('No data to transform')
     return path
 
 
 def transform_data(**kwargs):
+    # XCOM: cross communication between tasks
     input_parquet = kwargs['ti'].xcom_pull(task_ids='extract_data')
     output_parquet = kwargs['output_parquet']
     df = pd.read_parquet(input_parquet)

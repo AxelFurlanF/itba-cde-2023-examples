@@ -177,4 +177,11 @@ composer/
 
 *.DS_Store
 
-airflow_examples/logs/*
+*logs
+
+*.cfg
+
+*.txt
+
+webserver_config.py
+

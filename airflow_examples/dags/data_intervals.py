@@ -11,14 +11,14 @@ def print_dates(**context):
 
 default_args = {
     'owner': 'airflow',
-    'start_date': dt.datetime(2023, 7, 16),
+    'start_date': dt.datetime(2024, 9, 1),
     'retries': 1,
     'retry_delay': dt.timedelta(minutes=1)
 }
 
 with DAG('data_intervals_dag',
          default_args=default_args,
-         schedule_interval='@weekly',
+         schedule_interval='@daily',
          catchup=True
          ) as dag:
 

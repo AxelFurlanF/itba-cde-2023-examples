@@ -6,8 +6,6 @@ from airflow.operators.python_operator import PythonOperator
 
 def print_context(**context):
     pprint.pprint(context)
-    print('data_interval_start', context['data_interval_start'])
-    print('data_interval_end', context['data_interval_end'])
 
 
 default_args = {
