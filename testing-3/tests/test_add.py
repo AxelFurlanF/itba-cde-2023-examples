@@ -1,4 +1,4 @@
-from my_package import add as my_module
+from my_package.add import add
 
 
 def test_add():
@@ -8,7 +8,7 @@ def test_add():
     expected_output = 8
 
     # action
-    actual_output = my_module.add(a, b)
+    actual_output = add(a, b)
 
     # assert
     assert (

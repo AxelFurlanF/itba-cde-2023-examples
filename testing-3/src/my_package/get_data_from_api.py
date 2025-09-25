@@ -1,7 +1,7 @@
 import requests
 
 
-def get_data_from_api(num):
+def get_data_from_api():
     """
     This function sends GET request to specified URL and return the JSON response
 
@@ -11,12 +11,12 @@ def get_data_from_api(num):
     Returns:
     dict : The JSON response received from the GET request.
     """
-    url = f'http://echo.jsontest.com/result_number/{num}'
+    url = "https://echo.zuplo.io/"
     response = requests.get(url)
     return response.json()
 
 
-def get_and_transform_data_from_api(num):
+def get_and_transform_data_from_api():
     """
     This function sends GET request to specified URL and return the JSON response
 
@@ -26,7 +26,7 @@ def get_and_transform_data_from_api(num):
     Returns:
     dict : The JSON response received from the GET request.
     """
-    data = get_data_from_api(num)
+    data = get_data_from_api()
 
-    data['result_number'] = int(data['result_number'])
+    data["method"] = data["method"].lower()
     return data
